@@ -1,0 +1,42 @@
+issue du POSA 1, p125
+Catgeorie : Pattern d'architecture
+Description : Découpe les applications interactives en trois parties
+		Vue : interface utilisateur
+		Model : fonctions + données 
+		controleur : detecte les événements de l'utilisateur
+
+Problème : 	on peut vouloir accéder à des informations avec des interfaces différentes.
+		Si on code de la logique applicative dans les interfaces on risque de dupliquer
+		du code dans plusieurs interface ce qui pose des problème de maintenance.
+		On veut aussi qu'un changement dans les données soit immédiatement répercutées
+		dans ce que voit l'utilisateur qu'elle que soit sont interface graphique.
+
+Principe : 	Chaque vue est associée à un et un seul controleur.
+		Les vue envoient des événement au controleur (click de souris, appui sur une touche duclavier, ...).
+		Le controleur réagit en appelant un service du modèle ou de la vue.
+		L'utilisateur interagit avec le system seulement à travers le controleur.
+
+
+		Le modèle contient les fonctions et les données de l'application
+		Enregistre (register) les controler et les vues associée dans le but d leur notifier 
+		les changements.
+
+		Les vues représentent les données de différentes façons.
+		Chaque vue possède une fonction update.
+		Quand la fonction update est appelée, la vue récupère les données dans le modèle.
+		La vue crée et initialise sont controleur.
+
+		Le controleur récupère les entrées ("input") de l'utilisateur et les traduit en réquêtes
+		au modèle ou à la vue.
+		Un controleur est associé à une et une seule vue.
+		Implémente une fonction update appelée par modèle si nécessaire.
+
+
+		
+
+		
+		
+
+
+
+
